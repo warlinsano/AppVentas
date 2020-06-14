@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AppVentas.Views.FacturaByClientContentPage"
+             IconImageSource="ic_list"
+             BackgroundColor="{StaticResource colorBackgroud}"
+             Title="{Binding Title}">
+
+    <!--Spacing="10">
+    <Button x:Name="btn_agregar" 
+                    Text="Agregar Cliente"                 
+                    BackgroundColor="CornflowerBlue"
+                    TextColor="Black"
+                    ImageSource="ic_action_add_circle"
+                    Command="{Binding agregarClientButton}"/>-->
+    
+    <StackLayout Padding="10">
+        <StackLayout Padding="10" Spacing="10" >
+            <Label Text="Facturas" 
+                   FontSize="24"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontAttributes="Bold" 
+                   TextColor="Black"/>
+        </StackLayout>
+
+        <ListView
+            BackgroundColor="Transparent"
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            ItemsSource="{Binding ListFacturas}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame
+                            CornerRadius="10"
+                            HasShadow="True"
+                            Margin="0,0,0,5">
+                            <!--<Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectClientCommand}"/>
+                            </Frame.GestureRecognizers>-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <!--<ffimageloading:CachedImage
+                                    Grid.Column="0"
+                                    Source="ic_person"
+                                    LoadingPlaceholder= "LoaderImage"
+                                    ErrorPlaceholder= "ErrorImage"
+                                    CacheDuration= "50"
+                                    RetryCount= "3"
+                                    RetryDelay= "600"
+                                    DownsampleToViewSize = "true"
+                                    WidthRequest="100"/>-->
+                                <Image
+                                     WidthRequest="60"
+                                     Grid.Column="0"
+                                    Source="ic_person"/>
+                                <Grid
+                                    Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        Grid.Column="0"
+                                        Grid.Row="0"
+                                        Text="FacturaId:"/>
+                                    <Label
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        FontAttributes="Bold"
+                                        Text="{Binding FacturaId}"/>
+                                    <Label
+                                        Grid.Column="0"
+                                        Grid.Row="1"
+                                        Text="Total:"/>
+                                    <Label
+                                        Grid.Column="1"
+                                        Grid.Row="1"
+                                        FontAttributes="Bold"
+                                        Text="{Binding Total}"/>
+                                    <Label
+                                        Grid.Column="0"
+                                        Grid.Row="2"
+                                        Text="Fecha:"/>
+                                    <Label
+                                        Grid.Column="1"
+                                        Grid.Row="2"
+                                        FontAttributes="Bold"
+                                        Text="{Binding Fecha, StringFormat='{0:yyyy/MM/dd HH:mm}'}"/>
+                                </Grid>
+                                <Image
+                                    Grid.Column="2"
+                                    Source="ic_chevron_right"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

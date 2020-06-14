@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AppVentas.Views.EditClientContentPage"
+             IconImageSource="ic_pets"
+             BackgroundColor="{StaticResource colorBackgroud}"
+             Title="{Binding Title}">
+    
+    
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10" >
+            <Label Text="Detalles" 
+                   FontSize="24"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontAttributes="Bold" 
+                   TextColor="Black"/>
+            <Entry x:Name="FirstName" 
+                   Placeholder="Nombre" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Text="{Binding FirstName}"/>
+            <Entry x:Name="LastName"
+                   Placeholder="Apellido" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Text="{Binding LastName}"/>
+            <Entry x:Name="Cedula"
+                   Placeholder="Cedula" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Keyboard="Numeric"
+                   Text="{Binding Cedula}"/>
+            <Entry x:Name="Telephone"
+                   Placeholder="Telefono" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Keyboard="Telephone"
+                   Text="{Binding Telephone }"/>
+            <Entry x:Name="Adress"
+                   Placeholder="Dirreccion" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Text="{Binding Adress}"/>
+
+            <Button x:Name="EditarButton" 
+                    Text="Editar "                 
+                    BackgroundColor="Green"
+                    TextColor="Black"
+                    IsEnabled="{Binding IsEnabled}"
+                    Command="{Binding EditarButton}"/>
+            <!--<Button x:Name="GuardarButton" 
+                    Text="Guardar "                 
+                    BackgroundColor="CornflowerBlue"
+                    TextColor="Black"                   
+                    IsEnabled="{Binding IsEnabled}"
+                    Command="{Binding GuardarButton}"/>-->
+                    <!--IsVisible="{Binding IsVisible}"-->
+            <Button x:Name="EliminarButton" 
+                    Text="Eliminar"                 
+                    BackgroundColor="Red"
+                    TextColor="Black"  
+                    Command="{Binding EliminarButton}"/>
+            <!--<Button x:Name="CancelarButton" 
+                    Text="Cancelar"                 
+                    BackgroundColor="Red"
+                    TextColor="Black"  
+                    Command="{Binding CancelarButton}"/>-->
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

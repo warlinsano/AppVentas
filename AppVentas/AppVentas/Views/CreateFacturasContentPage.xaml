@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AppVentas.Views.CreateFacturasContentPage"
+             Title="{Binding Title}">
+
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10" >
+            <Label Text="Nueva Factura" 
+                   FontSize="24"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontAttributes="Bold" 
+                   TextColor="Black"/>
+            <Entry x:Name="Cedula"
+                   Placeholder="Cedula" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Keyboard="Numeric"
+                   Text="{Binding Cedula}"/>
+            <Entry x:Name="Total"
+                   Placeholder="Total" 
+                   TextColor="Black" 
+                   FontSize="14"
+                   Keyboard="Numeric"
+                   Text="{Binding Total}"/>
+
+            <Button x:Name="agregarButton" 
+                    Text="Agregar Factura"                 
+                    BackgroundColor="LightBlue"
+                    TextColor="Black"
+                    IsEnabled="{Binding IsEnabled}"
+                    Command="{Binding agregarButton}"/>
+        </StackLayout>
+    </ScrollView>
+    
+  
+</ContentPage>
